@@ -4,24 +4,28 @@
     {
       "name": "client",
       "image": "karthik530/multi-client",
+      "memory": 256,
       "hostname": "client",
       "essential": false
     },
     {
       "name": "server",
       "image": "karthik530/multi-server",
+      "memory": 256,
       "hostname": "api",
       "essential": false
     },
     {
       "name": "worker",
       "image": "karthik530/multi-worker",
+      "memory": 256,
       "essential": false
     },
     {
       "name": "nginx",
       "image": "karthik530/multi-nginx",
       "essential": true,
+      "memory": 256,
       "portMappings": [
         {
           "hostPort": 80,
