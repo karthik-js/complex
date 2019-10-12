@@ -1,0 +1,21 @@
+apiVersion: certmanager.k8s.io/v1alpha1
+kind: Certificate
+metadata:
+  name: csc760-net-tls
+spec:
+  secretName: csc760-net
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: csc760.net
+  dnsNames:
+    - csc760.net
+    - www.csc760.net
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - csc760.net
+          - www.csc760.net
+        
